@@ -1,0 +1,12 @@
+#First Terraform Node
+provider "aws" {
+  region = "us-east-1"
+}
+resource "aws_instance" "vm" {
+  ami           = "ami-01893222c83843146"
+  subnet_id     = "subnet-0eaa93d6b6f368a6a"
+  instance_type = "t3.micro"
+  tags = {
+    Name = "my-first-tf-node"
+  }
+}
